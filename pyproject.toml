@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "een445-pv-calculator-software"
+version = "0.1.0"
+description = ""
+authors = ["suprch4rg3d <emmanueloikonomou@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+tk = "^0.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,4 +1,6 @@
 from tkinter import *
+# from tkinter.ttk import *
+import tkintermapview
 
 ## Widgets = GUI elements--> buttons, textboxes, labels, images
 ## Window = serves as a container to hold or contain these widgets
@@ -10,11 +12,15 @@ from tkinter import *
 
 window = Tk() ## Instantiate an instance of a window - Window constructor
 window.geometry("600x600") ## Change the size of the window 420x420
-window.title("P/V Calculator") ## Change the title of the window
+window.title("P/V Calculator DEMO") ## Change the title of the window
 
-icon = PhotoImage(file='./images/solar-panel-clipart.png') 
+icon = PhotoImage(file='./Images/solar-panel-clipart.png') 
 window.iconphoto(True, icon)
 window.config(background="#D9EDBF") ## Any miscellanious changes to window go here
+
+map_widget = tkintermapview.TkinterMapView(window, width=800, height=600, corner_radius=0)
+map_widget.place(relx=0.5, rely=0.5, anchor=CENTER)
+
 
 label = Label(window, 
               text="Hello World", 
@@ -34,7 +40,7 @@ def click():
     global count
     count+=1
     print(f"You clicked the button {count} times")
-checkmark = PhotoImage(file='./images/checkmark.png')
+checkmark = PhotoImage(file='./Images/checkmark.png')
 button = Button(window, 
                 text='Click me!',
                 command=click,

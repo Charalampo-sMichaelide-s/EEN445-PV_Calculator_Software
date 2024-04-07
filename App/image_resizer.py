@@ -1,6 +1,7 @@
 from PIL import Image
 
-image = Image.open("./Images/pv-map-marker.png")
-width, height = 64, 64
+path = "./Images/cut-logo.png"
+image = Image.open(path)
+width, height = 300, 120
 resized_image = image.resize((width, height))
-resized_image.save("./Images/pv-map-marker.png")
+resized_image.save(path)

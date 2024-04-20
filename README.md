@@ -23,7 +23,7 @@ Windows - Open Powershell and run the following command:
 
 Linux, macOS, Windows (WSL) - Open Terminal and run the following command:
 ```
-curl -sSL https://install.python-poetry.org | python3 -
+  curl -sSL https://install.python-poetry.org | python3 -
 ```
 
 Next you have to add Poetry executable to the path. The default location of installation of Poetry is:

@@ -28,12 +28,14 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 Next you have to add Poetry executable to the path. The default location of installation of Poetry is:
 
-Windows - "%APPDATA%\pypoetry"
-macOS - "~/Library/Application Support/pypoetry"
-Linux/UNIX - "~/Library/Application Support/pypoetry"
+Windows - ```"%APPDATA%\pypoetry"```
+
+macOS - ```"~/Library/Application Support/pypoetry"```
+
+Linux/UNIX - ```"~/Library/Application Support/pypoetry"```
 
     
-## Run Locally
+## Run Locally(Windows)
 
 Clone the project
 

@@ -2,13 +2,13 @@
 
 import math
 
-def minimum_pv_shadow_length(latitude, slope, height):
+def minimum_pv_shadow_length(latitude, slope, length):
     """
     Calculate the minimum shadow length of a PV panel on December 21st.
 
     Inputs:
     - slope (float): The tilt angle of the PV panel from the horizontal (in degrees).
-    - height (float): The height of the PV panel above the ground (in meters).
+    - length (float): The length of the PV panel above the ground (in meters).
     - latitude (float): The latitude of the location (in degrees).
 
     Output:
@@ -21,8 +21,7 @@ def minimum_pv_shadow_length(latitude, slope, height):
     angle = 90 - latitude + solar_declination_winter_solstice
 
 
-    h = height * math.sin(math.radians(slope))
- 
+    h = length * math.sin(math.radians(slope))
  
 
     # Calculate the length of the shadow which will be the minimum
@@ -32,7 +31,7 @@ def minimum_pv_shadow_length(latitude, slope, height):
 
 # # Example usage
 # slope = 45  # degrees
-# height = 1.2  # meters
+# length = 1.2  # meters
 # latitude = 34  # degrees
-# min_shadow_length = minimum_pv_shadow_length(latitude, slope, height )
+# min_shadow_length = minimum_pv_shadow_length(latitude, slope, length )
 

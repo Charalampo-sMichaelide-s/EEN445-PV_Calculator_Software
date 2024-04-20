@@ -85,9 +85,9 @@ marker_coords = None
 marker = PhotoImage(file="./Images/pv-map-marker.png")
 address_input = StringVar()
 slope_input = StringVar()
-height_input = StringVar()
+length_input = StringVar()
 slope_is_valid = False
-height_is_valid = False
+length_is_valid = False
 results_description = StringVar()
 # full_address = StringVar()
 
@@ -274,37 +274,37 @@ slope.grid(row=2,
            pady=(5,5)
            )
 
-height_label = Label(options,
-                      text="Height [m]:",
+length_label = Label(options,
+                      text="Length [m]:",
                       font=('Arial', 12)
                       )
-height_label.grid(row=2, 
+length_label.grid(row=2, 
                  column=3,
                  padx=(5,0),
                  pady=(5,5)
                  )
-height = Entry(options,
+length = Entry(options,
                 font=('Arial'),
                 justify="center",
                 validate="focus",
-                textvariable=height_input
+                textvariable=length_input
                 )
 
-def set_height_callback(var, index, mode):    
-    global height_is_valid
+def set_length_callback(var, index, mode):    
+    global length_is_valid
     pattern = r'^[-+]?\d*\.?\d+$'
-    height_input = height.get()
-    valid = re.match(pattern, height_input)
-    height.config(foreground="black")
+    length_input = length.get()
+    valid = re.match(pattern, length_input)
+    length.config(foreground="black")
     
     if not valid:
-        height_input = ""
-        height_is_valid = False
+        length_input = ""
+        length_is_valid = False
     else:
-        height_is_valid = True
+        length_is_valid = True
 
-height_input.trace_add("write", set_height_callback)
-height.grid(row=2, 
+length_input.trace_add("write", set_length_callback)
+length.grid(row=2, 
            column=4,
            padx=(2,5),
            pady=(5,5)
@@ -329,9 +329,9 @@ results_label.pack()
 def calculator():
     global marker_coords
     global slope_input
-    global height_input
+    global length_input
     global slope_is_valid
-    global height_is_valid
+    global length_is_valid
     global results_description
     
     results_label.config(font=("Cascadia", 10, "normal"))
@@ -355,22 +355,22 @@ def calculator():
             results_description.set(f"{results_description.get()}\nERROR: Inadmissable slope value: {slope_input.get()}. Please enter a valid number for the slope in degrees.\n")
            
     try:
-        height_value = float(height_input.get())
+        length_value = float(length_input.get())
     except ValueError:
-        height.config(foreground="red")
-        if height_input.get() == "": 
-            print(f"\nERROR: Height input cannot be empty. Please enter a valid number for the height in meters.")
-            results_description.set(f"{results_description.get()}\nERROR: Height input cannot be empty. Please enter a valid number for the height in meters.")
+        length.config(foreground="red")
+        if length_input.get() == "": 
+            print(f"\nERROR: Length input cannot be empty. Please enter a valid number for the length in meters.")
+            results_description.set(f"{results_description.get()}\nERROR: Length input cannot be empty. Please enter a valid number for the length in meters.")
         else:
-            print(f"\nERROR: Inadmissable height value: {height_input.get()}. Please enter a valid number for the height in meters.")
-            results_description.set(f"{results_description.get()}\nERROR: Inadmissable height value: {height_input.get()}. Please enter a valid number for the height in meters.")
+            print(f"\nERROR: Inadmissable length value: {length_input.get()}. Please enter a valid number for the length in meters.")
+            results_description.set(f"{results_description.get()}\nERROR: Inadmissable length value: {length_input.get()}. Please enter a valid number for the length in meters.")
     
-    if slope_is_valid and height_is_valid and not marker_coords == "":
+    if slope_is_valid and length_is_valid and not marker_coords == "":
         results_label.config(font=("Cascadia", 10, "bold"))
         print(f"\nSlope angle set to {slope_input.get()}°.")
-        print(f"\nHeight value set to {height_input.get()} meters.")
+        print(f"\nLength value set to {length_input.get()} meters.")
 
-        result = minimum_pv_shadow_length(latitude, slope_value, height_value)
+        result = minimum_pv_shadow_length(latitude, slope_value, length_value)
         print(f"\nThe minimum shadow length of each P/V panel is approximately {result:.2f} meters.\n~~~~~~~~~~~~~~~~~~~~~~~~~")
         results_description.set(f"{results_description.get()}\nThe minimum shadow length of each P/V panel is approximately {result:.2f} meters.")
     else:
@@ -408,7 +408,7 @@ def clear():
     
     slope.delete(0, END)
     
-    height.delete(0, END)
+    length.delete(0, END)
     
     global results_description
     results_description.set("")

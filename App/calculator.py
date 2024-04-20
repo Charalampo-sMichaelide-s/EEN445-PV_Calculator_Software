@@ -1,3 +1,5 @@
+## Here goes the logic of the app.
+
 import math
 
 def minimum_pv_shadow_length(latitude, slope, height):
@@ -18,15 +20,19 @@ def minimum_pv_shadow_length(latitude, slope, height):
     # We Calculate the sun elevation angle on December 21st at solar noon
     angle = 90 - latitude + solar_declination_winter_solstice
 
+
+    h = height * math.sin(math.radians(slope))
+ 
+ 
+
     # Calculate the length of the shadow which will be the minimum
-    minimum_shadow_length = height / math.tan(math.radians(angle - slope))
+    minimum_shadow_length = h / math.tan(math.radians(angle))
 
     return minimum_shadow_length
 
 # # Example usage
-# slope = 2  # degrees
+# slope = 45  # degrees
 # height = 1.2  # meters
 # latitude = 34  # degrees
-# if __name__ == "__main__":
-#     min_shadow_length = minimum_pv_shadow_length(slope, height, latitude)
+# min_shadow_length = minimum_pv_shadow_length(latitude, slope, height )
 

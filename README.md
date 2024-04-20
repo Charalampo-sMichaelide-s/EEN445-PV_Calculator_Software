@@ -1,5 +1,5 @@
 
-# Project Title
+# P/V Shadowing Calculator Software
 
 A simple desktop utility with UI to calculate the minimum distance between panels to avoid shading in the case of single, double and/or triple panel system.
 

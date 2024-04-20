@@ -83,7 +83,7 @@ def display():
         print("You agree")
     else:
         print("You don't agree")
-checkbutton = Checkbutton(window, text='Charalambos', variable=x, onvalue=1, offvalue=0, command=display, font=('Arial', 20))
+checkbutton = Checkbutton(window, text='asdf', variable=x, onvalue=1, offvalue=0, command=display, font=('Arial', 20))
 checkbutton.pack()
 
 food = ["pizza", "hamburger", "hotdog"]

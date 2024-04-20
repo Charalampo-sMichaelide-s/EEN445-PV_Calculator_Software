@@ -1,5 +1,3 @@
-## Here goes the logic of the app.
-
 import math
 
 def minimum_pv_shadow_length(latitude, slope, height):
@@ -29,5 +27,6 @@ def minimum_pv_shadow_length(latitude, slope, height):
 # slope = 2  # degrees
 # height = 1.2  # meters
 # latitude = 34  # degrees
-# min_shadow_length = minimum_pv_shadow_length(slope, height, latitude)
+# if __name__ == "__main__":
+#     min_shadow_length = minimum_pv_shadow_length(slope, height, latitude)
 

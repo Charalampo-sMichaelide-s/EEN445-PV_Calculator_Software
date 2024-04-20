@@ -1032,6 +1032,20 @@ docs = ["myst-parser", "pydata-sphinx-theme", "sphinx"]
 test = ["argcomplete (>=3.0.3)", "mypy (>=1.7.0)", "pre-commit", "pytest (>=7.0,<8.1)", "pytest-mock", "pytest-mypy-testing"]
 
 [[package]]
+name = "ttkbootstrap"
+version = "1.10.1"
+description = "A supercharged theme extension for tkinter that enables on-demand modern flat style themes inspired by Bootstrap."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "ttkbootstrap-1.10.1-py3-none-any.whl", hash = "sha256:c6a10ee5ea64051a0f8b75c20ef8e5f2417c62b4d0858c831683d4f2135aa573"},
+    {file = "ttkbootstrap-1.10.1.tar.gz", hash = "sha256:53925525c4104f9e345627500dced2d0392ad74324b2a81467aaee3ffbe1a474"},
+]
+
+[package.dependencies]
+pillow = ">=8.2.0"
+
+[[package]]
 name = "typing-extensions"
 version = "4.10.0"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -1073,4 +1087,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "21f3bef9a6d97ffee9b6b58de6d85c184d73bade95194480d98f6050b8153d32"
+content-hash = "19126fdc04fba2876539f48507ca24cc5b61609662a11b92c8b3e353098a96a5"

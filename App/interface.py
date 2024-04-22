@@ -1,9 +1,24 @@
+# import os     ## Uncomment to use with resource_path()
 from tkinter import *
 # from tkinter.ttk import *
 from calculator import *
 import datetime
 import re
 import tkintermapview
+
+### For making an .exe instance of the project, uncomment the function resource_path() and extract all the images from the Images folder to project's root folder. 
+## Then set the image paths throughout the interface.py like this: "PhotoImage(file=resource_path("solar-clipart.png"))
+### Then run "auto-py-to-exe" and include the project folder during its use. 
+#
+# def resource_path(relative_path):
+#     try:
+#         base_path = sys._MEIPASS
+#     except Exception:
+#         base_path = os.path.abspath(".")
+
+#     return os.path.join(base_path, relative_path)
+
+## Here goes the UI of the app.
 
 ##########################
 ####      Window      ####
@@ -14,9 +29,10 @@ window.geometry(f"{750}x{525}")    ## Change the size of the window
 window.title("EEN445 - P/V Calculator")  ## Change the title of the window
 window.resizable(0,0) ## Disables maximize window action
 
-icon = PhotoImage(file='./Images/solar-clipart.png') 
+icon = PhotoImage(file="./Images/solar-clipart.png") 
 window.iconphoto(True, icon)
 window.config(background="#D9EDBF")
+
 
 ####################################
 
